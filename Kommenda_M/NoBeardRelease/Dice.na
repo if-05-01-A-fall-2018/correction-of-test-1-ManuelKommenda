@@ -1,0 +1,62 @@
+"Number 1:Number 2:The Number is:"
+
+inc 12
+
+# print Number 1:
+lit 0
+lit 9
+lit 10
+out 2
+
+# read input 1
+la 0 32
+la 0 36
+in 0
+
+# print Number 2:
+lit 9
+lit 9
+lit 10
+out 2
+
+# read input 2
+la 0 36
+la 0 40
+in 0
+
+#if num1 == num2
+lv 0 32
+lv 0 36
+rel 2
+fjmp  .differentNumbers
+
+
+# cal when 2 numbers are same
+la 0 40
+lv 0 32
+lv 0 36
+add
+lit 2
+mul
+sto
+jmp .end
+
+#cal when 2 numbers are different
+.differentNumbers
+la 0 40
+lv 0 32
+lv 0 36
+add
+sto
+
+.end
+lit 18
+lit 14
+lit 15
+out 2
+lv 0 40
+lit 1
+out 0
+out 3
+
+halt
